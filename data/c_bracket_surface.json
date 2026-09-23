@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "name": "c_bracket_surface",
+  "description": "Extruded nonconvex C-bracket with cylindrical walls and planar caps/cut faces",
+  "length_unit": "m",
+  "seed": 20260915,
+  "raw_points": 4096,
+  "sampling": "analytic boundary sampled proportional to surface area",
+  "shape": {
+    "type": "extruded_annular_sector",
+    "center_m": [
+      0.0,
+      0.0,
+      0.74
+    ],
+    "outer_radius_m": 0.22,
+    "inner_radius_m": 0.1,
+    "height_m": 0.24,
+    "gap_angle_deg": 70.0
+  },
+  "surface_point_counts": {
+    "outer_curved_wall": 1709,
+    "inner_curved_wall": 777,
+    "top_planar_face": 621,
+    "bottom_planar_face": 621,
+    "cut_planar_face_begin": 184,
+    "cut_planar_face_end": 184
+  },
+  "semantics": "Points sample the complete analytic boundary. The downstream sparse voxel pipeline occupies only voxels containing samples and does not fill the analytic solid interior.",
+  "bounds_m": [
+    [
+      -0.2199999988989945,
+      -0.21999998510013546,
+      0.62
+    ],
+    [
+      0.1801935001883372,
+      0.2199995788250471,
+      0.86
+    ]
+  ]
+}

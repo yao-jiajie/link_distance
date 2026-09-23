@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "name": "panda_disconnected_irregular_scene",
+  "description": "Three disconnected irregular surface clouds placed around the fixed Panda example pose without moving the robot",
+  "length_unit": "m",
+  "seed": 20260921,
+  "raw_points": 4608,
+  "recommended_voxel_size_m": 0.04,
+  "recommended_configuration": [
+    0,
+    -0.4,
+    0,
+    -2.0,
+    0,
+    1.6,
+    0.8
+  ],
+  "recommended_field_from_base": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "components": [
+    {
+      "name": "c_bracket",
+      "points": 1728,
+      "translation_m": [
+        -0.48,
+        -0.42,
+        -0.26
+      ],
+      "shape": {
+        "type": "extruded_annular_sector",
+        "center_m": [
+          0.0,
+          0.0,
+          0.74
+        ],
+        "outer_radius_m": 0.22,
+        "inner_radius_m": 0.1,
+        "height_m": 0.24,
+        "gap_angle_deg": 70.0
+      }
+    },
+    {
+      "name": "wavy_torus",
+      "points": 1440,
+      "shape": {
+        "type": "three_lobed_wavy_torus",
+        "center_m": [
+          0.8,
+          -0.38,
+          0.7
+        ],
+        "major_radius_m": 0.135,
+        "minor_radius_m": 0.045
+      }
+    },
+    {
+      "name": "bent_tube",
+      "points": 1440,
+      "shape": {
+        "type": "capped_variable_radius_bent_tube",
+        "centerline_start_m": [
+          -0.05,
+          0.43,
+          0.28
+        ],
+        "centerline_end_m": [
+          0.5,
+          0.43,
+          0.28
+        ],
+        "nominal_radius_m": 0.047
+      }
+    }
+  ],
+  "sampling": "complete deterministic analytic surface samples",
+  "semantics": "All components share one XYZ input. The voxel pipeline occupies only sample-containing voxels and does not fill analytic interiors.",
+  "bounds_m": [
+    [
+      -0.6999999067374405,
+      -0.6399997884171408,
+      0.2551331867560942
+    ],
+    [
+      0.9989519549612416,
+      0.5244406184205245,
+      0.7761501244494553
+    ]
+  ]
+}

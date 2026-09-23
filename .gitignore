@@ -1,0 +1,25 @@
+# CMake / build products
+/build/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+
+# Generated outputs
+/output/
+
+# Local dependencies
+/_deps/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE configuration
+/.vscode/
+/.idea/
+
+# Temporary files
+*.orig
+*.swp
+*.log

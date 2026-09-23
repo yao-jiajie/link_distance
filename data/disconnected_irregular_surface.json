@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "name": "disconnected_irregular_surface",
+  "description": "Disconnected C-bracket and three-lobed wavy torus surface samples",
+  "length_unit": "m",
+  "seed": 20260916,
+  "raw_points": 4096,
+  "sampling": "complete analytic surfaces; deterministic parameter sampling",
+  "components": [
+    {
+      "name": "c_bracket",
+      "points": 2304,
+      "translation_m": [
+        -0.29,
+        0.0,
+        0.0
+      ],
+      "shape": {
+        "type": "extruded_annular_sector",
+        "center_m": [
+          0.0,
+          0.0,
+          0.74
+        ],
+        "outer_radius_m": 0.22,
+        "inner_radius_m": 0.1,
+        "height_m": 0.24,
+        "gap_angle_deg": 70.0
+      }
+    },
+    {
+      "name": "wavy_torus",
+      "points": 1792,
+      "shape": {
+        "type": "three_lobed_wavy_torus",
+        "center_m": [
+          0.31,
+          0.0,
+          0.75
+        ],
+        "major_radius_m": 0.135,
+        "minor_radius_m": 0.045,
+        "radial_modulation_fraction": 0.12,
+        "vertical_wave_amplitude_m": 0.028
+      }
+    }
+  ],
+  "expected_free_probes_m": [
+    [
+      0.0,
+      0.0,
+      0.75
+    ]
+  ],
+  "semantics": "Both components are surface samples. The downstream sparse voxel pipeline occupies only voxels containing samples and does not fill analytic interiors.",
+  "bounds_m": [
+    [
+      -0.509999993051206,
+      -0.21999437127618496,
+      0.62
+    ],
+    [
+      0.5052442487918312,
+      0.21999998774663648,
+      0.86
+    ]
+  ]
+}

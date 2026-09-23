@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "name": "panda_complex_scene",
+  "description": "Six irregular obstacle surfaces around the fixed Panda pose",
+  "length_unit": "m",
+  "seed": 20260922,
+  "raw_points": 9216,
+  "recommended_voxel_size_m": 0.02,
+  "recommended_configuration": [
+    0,
+    -0.4,
+    0,
+    -2.0,
+    0,
+    1.6,
+    0.8
+  ],
+  "recommended_field_from_base": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "new_shape_noise_standard_deviation_m": 0.001,
+  "components": [
+    {
+      "name": "c_bracket",
+      "points": 1728,
+      "translation_m": [
+        -0.48,
+        -0.42,
+        -0.26
+      ],
+      "shape": {
+        "type": "extruded_annular_sector",
+        "center_m": [
+          0.0,
+          0.0,
+          0.74
+        ],
+        "outer_radius_m": 0.22,
+        "inner_radius_m": 0.1,
+        "height_m": 0.24,
+        "gap_angle_deg": 70.0
+      }
+    },
+    {
+      "name": "wavy_torus",
+      "points": 1440,
+      "shape": {
+        "type": "three_lobed_wavy_torus",
+        "center_m": [
+          0.8,
+          -0.38,
+          0.7
+        ],
+        "major_radius_m": 0.135,
+        "minor_radius_m": 0.045
+      }
+    },
+    {
+      "name": "bent_tube",
+      "points": 1440,
+      "shape": {
+        "type": "capped_variable_radius_bent_tube",
+        "centerline_start_m": [
+          -0.05,
+          0.43,
+          0.28
+        ],
+        "centerline_end_m": [
+          0.5,
+          0.43,
+          0.28
+        ],
+        "nominal_radius_m": 0.047
+      }
+    },
+    {
+      "name": "twisted_ribbon",
+      "points": 1536,
+      "shape": {
+        "type": "twisted_corrugated_ribbon",
+        "center_m": [
+          -0.62,
+          0.08,
+          0.72
+        ],
+        "parameter_domain": "u,v in [-1,1]"
+      }
+    },
+    {
+      "name": "fluted_column",
+      "points": 1536,
+      "shape": {
+        "type": "capped_seven_flute_column",
+        "center_xy_m": [
+          0.15,
+          -0.72
+        ],
+        "height_interval_m": [
+          0.22,
+          0.77
+        ],
+        "nominal_radius_m": 0.075
+      }
+    },
+    {
+      "name": "folded_canopy",
+      "points": 1536,
+      "shape": {
+        "type": "folded_nonconvex_canopy",
+        "center_m": [
+          0.86,
+          0.5,
+          0.72
+        ],
+        "parameter_domain": "u,v in [-1,1]"
+      }
+    }
+  ],
+  "sampling": "Deterministic analytic surfaces; new shapes have 1 mm Gaussian coordinate noise",
+  "semantics": "One XYZ file contains all six shapes. The voxel pipeline occupies sample-containing voxels only; it does not fill analytic interiors.",
+  "bounds_m": [
+    [
+      -0.7804820200232522,
+      -0.8141033921763074,
+      0.21708395929728852
+    ],
+    [
+      1.020318058685481,
+      0.6219478719750249,
+      0.889766326504869
+    ]
+  ]
+}

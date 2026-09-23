@@ -1,0 +1,4 @@
+# Three occupied voxels form an L; units m, intended voxel size 0.01 m.
+0.005 0.005 0.005
+0.015 0.005 0.005
+0.005 0.015 0.005

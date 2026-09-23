@@ -1,0 +1,12 @@
+{
+  "generator": "multi_view_pinhole_depth_camera",
+  "length_unit": "m",
+  "seed": 20260904,
+  "object": {"type": "ellipsoid", "center_m": [0, 0, 0.75], "radii_m": [0.17999999999999999, 0.13, 0.23999999999999999]},
+  "camera": {"views": 10, "image_width": 96, "image_height": 72, "vertical_fov_degrees": 50},
+  "sensor_model": {"base_depth_noise_sigma_m": 0.0011999999999999999, "incidence_dependent_noise": true, "depth_quantization_m": 0.00050000000000000001, "base_dropout_probability": 0.059999999999999998, "grazing_angle_dropout": true, "outliers": 0},
+  "sparsification": {"method": "voxel_reservoir", "voxel_size_m": 0.017999999999999999},
+  "observed_noise": {"mean_m": 0.0016329999572627155, "rms_m": 0.0019731877295184152, "maximum_m": 0.0079761001531356082},
+  "counts": {"cast_rays": 69120, "surface_hits": 9092, "accepted_measurements": 7858, "output_points": 1655},
+  "ground_truth_file": "realistic_sparse_camera_ground_truth.xyz"
+}

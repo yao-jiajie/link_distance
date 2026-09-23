@@ -1,0 +1,858 @@
+{
+  "schema": 1,
+  "length_unit": "m",
+  "seed": 20260910,
+  "recommended_voxel_size_m": 0.04,
+  "semantics": "Surface point samples only; voxel occupancy does not fill object interiors. Synthetic cases other than camera have no sensor or visibility model.",
+  "generator_sources_sha256": {
+    "scripts/generate_point_cloud_cases.py": "64df629a43835b0845cb8ac37ed3bbcac4c6d1ec557a64c94d71dda4816fc47e",
+    "scripts/benchmark_scene_clouds.py": "95e5ecc46ac003fe27218870f50209209e6fda87422c0ff6de52a58474a4a7af",
+    "scripts/benchmark_octree_phase4.py": "6ee3cd2f6c631ef40294b19c14c512f2eb4921acddec7e68cf46e7a1da25d12b"
+  },
+  "cases": [
+    {
+      "name": "camera",
+      "description": "Original noisy multi-view ellipsoid",
+      "sampling": "simulated_depth_camera",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "source_file": "data/realistic_sparse_camera.xyz",
+      "seed": 20260904,
+      "file": "camera.xyz",
+      "raw_points": 1655,
+      "bounds_m": [
+        [
+          -0.18189363224119492,
+          -0.13085807453809528,
+          0.5091119350749574
+        ],
+        [
+          0.18150177740706394,
+          0.13144473062103368,
+          0.9924463500743375
+        ]
+      ],
+      "sha256": "cb135f6b594751dae4fe0ad8c2e73f966f9615a1e0a8e2306256a7e41f0db95c"
+    },
+    {
+      "name": "cube_surface",
+      "description": "CUBE surface",
+      "sampling": "box_union_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "shape": {
+        "boxes": [
+          [
+            [
+              -0.15,
+              -0.15,
+              0.5
+            ],
+            [
+              0.15,
+              0.15,
+              0.8
+            ]
+          ]
+        ]
+      },
+      "file": "cube_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.15,
+          -0.15,
+          0.5
+        ],
+        [
+          0.15,
+          0.15,
+          0.8
+        ]
+      ],
+      "sha256": "c7f9c40b96146ef011dd01c69683d1a0dd6dc8b167bf5f0e998bb07c6e891338"
+    },
+    {
+      "name": "l_surface",
+      "description": "L surface",
+      "sampling": "box_union_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [
+        [
+          0.06,
+          0.06,
+          0.58
+        ]
+      ],
+      "shape": {
+        "boxes": [
+          [
+            [
+              -0.15,
+              -0.15,
+              0.5
+            ],
+            [
+              0.15,
+              -0.06,
+              0.65
+            ]
+          ],
+          [
+            [
+              -0.15,
+              -0.06,
+              0.5
+            ],
+            [
+              -0.06,
+              0.15,
+              0.65
+            ]
+          ]
+        ],
+        "gap": [
+          [
+            -0.03,
+            -0.03,
+            0.515
+          ],
+          [
+            0.12,
+            0.12,
+            0.635
+          ]
+        ]
+      },
+      "file": "l_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.15,
+          -0.15,
+          0.5
+        ],
+        [
+          0.15,
+          0.15,
+          0.65
+        ]
+      ],
+      "sha256": "e3a18cc3d5b737de3b546139a5d3072168cf0945bec4ec4fddbdcf52b00b6f47"
+    },
+    {
+      "name": "u_surface",
+      "description": "U surface",
+      "sampling": "box_union_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [
+        [
+          0.02,
+          0.06,
+          0.58
+        ]
+      ],
+      "shape": {
+        "boxes": [
+          [
+            [
+              -0.15,
+              -0.15,
+              0.5
+            ],
+            [
+              0.15,
+              -0.06,
+              0.65
+            ]
+          ],
+          [
+            [
+              -0.15,
+              -0.06,
+              0.5
+            ],
+            [
+              -0.06,
+              0.15,
+              0.65
+            ]
+          ],
+          [
+            [
+              0.06,
+              -0.06,
+              0.5
+            ],
+            [
+              0.15,
+              0.15,
+              0.65
+            ]
+          ]
+        ],
+        "gap": [
+          [
+            -0.04,
+            -0.02,
+            0.515
+          ],
+          [
+            0.04,
+            0.12,
+            0.635
+          ]
+        ]
+      },
+      "file": "u_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.15,
+          -0.15,
+          0.5
+        ],
+        [
+          0.15,
+          0.15,
+          0.65
+        ]
+      ],
+      "sha256": "82523c56c5568a66815f5775f66dce41fe455981364065a8d7584c5d012d3ab5"
+    },
+    {
+      "name": "thin_wall_surface",
+      "description": "THIN WALL surface",
+      "sampling": "box_union_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "shape": {
+        "boxes": [
+          [
+            [
+              -0.003,
+              -0.15,
+              0.5
+            ],
+            [
+              0.003,
+              0.15,
+              0.8
+            ]
+          ]
+        ]
+      },
+      "file": "thin_wall_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.003,
+          -0.15,
+          0.5
+        ],
+        [
+          0.003,
+          0.15,
+          0.8
+        ]
+      ],
+      "sha256": "094f407cc444ba32e9f6db088619f19d4743a51fb55e1a797912c37710655056"
+    },
+    {
+      "name": "staircase_surface",
+      "description": "staircase",
+      "sampling": "box_union_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "shape": {
+        "boxes": [
+          [
+            [
+              -0.18,
+              -0.14,
+              0.5
+            ],
+            [
+              -0.06,
+              0.14,
+              0.62
+            ]
+          ],
+          [
+            [
+              -0.06,
+              -0.14,
+              0.5
+            ],
+            [
+              0.06,
+              0.14,
+              0.74
+            ]
+          ],
+          [
+            [
+              0.06,
+              -0.14,
+              0.5
+            ],
+            [
+              0.18,
+              0.14,
+              0.86
+            ]
+          ]
+        ]
+      },
+      "file": "staircase_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.18,
+          -0.14,
+          0.5
+        ],
+        [
+          0.18,
+          0.14,
+          0.86
+        ]
+      ],
+      "sha256": "dbc6329396e8e4fb8a973ceb62b89c6f47e431d3dc897257c02645890f951125"
+    },
+    {
+      "name": "two_objects_surface",
+      "description": "two objects",
+      "sampling": "box_union_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [
+        [
+          0.02,
+          0.02,
+          0.7
+        ]
+      ],
+      "shape": {
+        "boxes": [
+          [
+            [
+              -0.3,
+              -0.1,
+              0.52
+            ],
+            [
+              -0.1,
+              0.1,
+              0.72
+            ]
+          ],
+          [
+            [
+              0.1,
+              -0.1,
+              0.68
+            ],
+            [
+              0.3,
+              0.1,
+              0.88
+            ]
+          ]
+        ]
+      },
+      "file": "two_objects_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.3,
+          -0.1,
+          0.52
+        ],
+        [
+          0.3,
+          0.1,
+          0.88
+        ]
+      ],
+      "sha256": "68e250c46bf151a741f96bcddff9f258e557020ffe4bc338da04adcaf0887587"
+    },
+    {
+      "name": "narrow_corridor_surface",
+      "description": "narrow corridor",
+      "sampling": "box_union_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [
+        [
+          0.02,
+          0.02,
+          0.7
+        ]
+      ],
+      "shape": {
+        "boxes": [
+          [
+            [
+              -0.22,
+              -0.14,
+              0.52
+            ],
+            [
+              -0.06,
+              0.14,
+              0.88
+            ]
+          ],
+          [
+            [
+              0.06,
+              -0.14,
+              0.52
+            ],
+            [
+              0.22,
+              0.14,
+              0.88
+            ]
+          ]
+        ]
+      },
+      "file": "narrow_corridor_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.22,
+          -0.14,
+          0.52
+        ],
+        [
+          0.22,
+          0.14,
+          0.88
+        ]
+      ],
+      "sha256": "dee55bf53046150dd4b47df675b7b8034904f0bb30b43fd9d4d8b5dc5556e87a"
+    },
+    {
+      "name": "cylinder_surface",
+      "description": "Closed cylinder surface",
+      "sampling": "cylinder_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "shape": {
+        "type": "cylinder",
+        "radius_m": 0.14,
+        "height_m": 0.32,
+        "center_m": [
+          0.0,
+          0.0,
+          0.72
+        ]
+      },
+      "file": "cylinder_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.13999983489171372,
+          -0.13999918731405442,
+          0.5599999999999999
+        ],
+        [
+          0.1399977863921961,
+          0.1399966554791671,
+          0.88
+        ]
+      ],
+      "sha256": "e62c544fae7803981ab541a2d454c6948ecb4d261eab53438c4716658050c8a6"
+    },
+    {
+      "name": "torus_surface",
+      "description": "Torus with an open central hole",
+      "sampling": "uniform_torus_parameters_not_surface_area",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [
+        [
+          0.02,
+          0.02,
+          0.74
+        ]
+      ],
+      "shape": {
+        "type": "torus",
+        "major_radius_m": 0.16,
+        "minor_radius_m": 0.06,
+        "center_m": [
+          0,
+          0,
+          0.74
+        ]
+      },
+      "file": "torus_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.21938547211302836,
+          -0.21982550327579664,
+          0.6800000509107588
+        ],
+        [
+          0.21998300989486627,
+          0.2193888173870195,
+          0.7999997590754994
+        ]
+      ],
+      "sha256": "f304b2034bc012cf88449fbfd31f3cfe52cc488cf4cdcc48cfdc9cd3cf20a54e"
+    },
+    {
+      "name": "hollow_box_surfaces",
+      "description": "Outer and inner surfaces of a hollow box",
+      "sampling": "outer_and_inner_box_surfaces",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [
+        [
+          0.02,
+          0.02,
+          0.74
+        ]
+      ],
+      "shape": {
+        "outer": {
+          "boxes": [
+            [
+              [
+                -0.18,
+                -0.18,
+                0.56
+              ],
+              [
+                0.18,
+                0.18,
+                0.92
+              ]
+            ]
+          ]
+        },
+        "inner": {
+          "boxes": [
+            [
+              [
+                -0.09,
+                -0.09,
+                0.65
+              ],
+              [
+                0.09,
+                0.09,
+                0.83
+              ]
+            ]
+          ]
+        }
+      },
+      "file": "hollow_box_surfaces.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.18,
+          -0.18,
+          0.56
+        ],
+        [
+          0.18,
+          0.18,
+          0.92
+        ]
+      ],
+      "sha256": "f034a90c104394f5bea407ffef2c13f25a03e83f6a95d4fe62422525e63227fd"
+    },
+    {
+      "name": "plane_patch",
+      "description": "Open planar patch",
+      "sampling": "uniform_planar_rectangle",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [
+        [
+          0.02,
+          0.02,
+          0.66
+        ]
+      ],
+      "file": "plane_patch.xyz",
+      "raw_points": 1024,
+      "bounds_m": [
+        [
+          -0.1795924309244049,
+          -0.13983752805764166,
+          0.74
+        ],
+        [
+          0.17961975786123863,
+          0.13994199091854392,
+          0.74
+        ]
+      ],
+      "sha256": "b7e7717745e124cd50f1802aaeb1be281d3087a9f57684d1c96b495fd1cf3f14"
+    },
+    {
+      "name": "ellipsoid_sparse",
+      "description": "Ellipsoid surface, 256 points",
+      "sampling": "uniform_directions_scaled_to_ellipsoid",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "shape": {
+        "center": [
+          0.0,
+          0.0,
+          0.75
+        ],
+        "radii": [
+          0.18,
+          0.13,
+          0.24
+        ]
+      },
+      "nested_density_family": "ellipsoid",
+      "file": "ellipsoid_sparse.xyz",
+      "raw_points": 256,
+      "bounds_m": [
+        [
+          -0.179079869543641,
+          -0.12969847709060883,
+          0.5110817797855953
+        ],
+        [
+          0.17936405723745769,
+          0.12896400093020413,
+          0.9897518917706389
+        ]
+      ],
+      "sha256": "ac37e459d65e5110f7839dd57afff871fb3967faf32c11bea69114fcea43f128"
+    },
+    {
+      "name": "ellipsoid_surface",
+      "description": "Ellipsoid surface, 2048 points",
+      "sampling": "uniform_directions_scaled_to_ellipsoid",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "shape": {
+        "center": [
+          0.0,
+          0.0,
+          0.75
+        ],
+        "radii": [
+          0.18,
+          0.13,
+          0.24
+        ]
+      },
+      "nested_density_family": "ellipsoid",
+      "file": "ellipsoid_surface.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.17996015307165183,
+          -0.12995178907675217,
+          0.510314471045615
+        ],
+        [
+          0.17998402279481449,
+          0.12896400093020413,
+          0.9897991438967572
+        ]
+      ],
+      "sha256": "dff6b12b98bfd787f27620ead7387ecb332b2bc38e80a7743946ec8eb2ff1f85"
+    },
+    {
+      "name": "ellipsoid_dense",
+      "description": "Ellipsoid surface, 8192 points",
+      "sampling": "uniform_directions_scaled_to_ellipsoid",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "shape": {
+        "center": [
+          0.0,
+          0.0,
+          0.75
+        ],
+        "radii": [
+          0.18,
+          0.13,
+          0.24
+        ]
+      },
+      "nested_density_family": "ellipsoid",
+      "file": "ellipsoid_dense.xyz",
+      "raw_points": 8192,
+      "bounds_m": [
+        [
+          -0.17996015307165183,
+          -0.12995178907675217,
+          0.5102037539462914
+        ],
+        [
+          0.1799842129409998,
+          0.1299633554405547,
+          0.9899530583680102
+        ]
+      ],
+      "sha256": "3922544ceb4b46bd7a5574918e369acc3c35db14a6afb22f4ff020408672ed3b"
+    },
+    {
+      "name": "ellipsoid_noise_2mm",
+      "description": "Ellipsoid with 2 mm coordinate noise",
+      "sampling": "ellipsoid_plus_iid_cartesian_gaussian",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "coordinate_noise_sigma_m": 0.002,
+      "observed_displacement_rms_m": 0.0034926467511678058,
+      "base_case": "ellipsoid_surface",
+      "file": "ellipsoid_noise_2mm.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.18225356786234517,
+          -0.13374531894416458,
+          0.5081799126900648
+        ],
+        [
+          0.1807033625015494,
+          0.1316810184451509,
+          0.9920401535079129
+        ]
+      ],
+      "sha256": "9966459514f5664056ae066ebc0929258bb092f59b5bcecfdb4fddf7735f4ffa"
+    },
+    {
+      "name": "ellipsoid_noise_8mm",
+      "description": "Ellipsoid with 8 mm coordinate noise",
+      "sampling": "ellipsoid_plus_iid_cartesian_gaussian",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "coordinate_noise_sigma_m": 0.008,
+      "observed_displacement_rms_m": 0.013970587004671218,
+      "base_case": "ellipsoid_surface",
+      "file": "ellipsoid_noise_8mm.xyz",
+      "raw_points": 2048,
+      "bounds_m": [
+        [
+          -0.19259444282632943,
+          -0.14512590854640176,
+          0.4960279538233305
+        ],
+        [
+          0.19235857838548573,
+          0.14504190644343465,
+          1.0009843059910735
+        ]
+      ],
+      "sha256": "55fb42e10ad48295c6e1fe63e0b90f3915c86771dd2bf231e58f9e45e08a4229"
+    },
+    {
+      "name": "ellipsoid_partial",
+      "description": "Open positive-X ellipsoid hemisphere",
+      "sampling": "cropped_ellipsoid_surface",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [
+        [
+          -0.1,
+          0.02,
+          0.74
+        ]
+      ],
+      "crop": "x >= 0",
+      "file": "ellipsoid_partial.xyz",
+      "raw_points": 1024,
+      "bounds_m": [
+        [
+          0.0005292119088807778,
+          -0.12994716090174604,
+          0.510314471045615
+        ],
+        [
+          0.17998402279481449,
+          0.12896400093020413,
+          0.9897991438967572
+        ]
+      ],
+      "sha256": "6bd409c8e9027f3e1411a758b9f4db20df616ad1ecd76b4ce2a4f29a8082157f"
+    },
+    {
+      "name": "ellipsoid_duplicates",
+      "description": "Ellipsoid shuffled with three copies of every point",
+      "sampling": "duplicate_and_shuffle",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "same_geometry_as": "ellipsoid_surface",
+      "file": "ellipsoid_duplicates.xyz",
+      "raw_points": 6144,
+      "bounds_m": [
+        [
+          -0.17996015307165183,
+          -0.12995178907675217,
+          0.510314471045615
+        ],
+        [
+          0.17998402279481449,
+          0.12896400093020413,
+          0.9897991438967572
+        ]
+      ],
+      "sha256": "20f285a95fcb91a231b969c040c66d162240e33735c41e0de4b2e8f07ed8169e"
+    },
+    {
+      "name": "ellipsoid_outliers",
+      "description": "Ellipsoid with six isolated outliers",
+      "sampling": "ellipsoid_plus_explicit_outliers",
+      "suite_seed": 20260910,
+      "expected_free_probes_m": [],
+      "outliers_m": [
+        [
+          0.26,
+          0.02,
+          0.74
+        ],
+        [
+          -0.26,
+          0.02,
+          0.74
+        ],
+        [
+          0.02,
+          0.22,
+          0.74
+        ],
+        [
+          0.02,
+          -0.22,
+          0.74
+        ],
+        [
+          0.02,
+          0.02,
+          1.06
+        ],
+        [
+          0.02,
+          0.02,
+          0.42
+        ]
+      ],
+      "base_case": "ellipsoid_surface",
+      "file": "ellipsoid_outliers.xyz",
+      "raw_points": 2054,
+      "bounds_m": [
+        [
+          -0.26,
+          -0.22,
+          0.42
+        ],
+        [
+          0.26,
+          0.22,
+          1.06
+        ]
+      ],
+      "sha256": "eb97f506debae98b73c369a84d5704c6e8afb013c005f2a3820328b6b31ec1ae"
+    }
+  ]
+}
